@@ -1,0 +1,135 @@
+CALCULADORA 3
+
+HTML
+
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Calculadora Simples</title>
+</head>
+
+<h1>CALCULADORA</h1>
+
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <div class="row">
+            <button onclick="appendToDisplay('7')">7</button>
+            <button onclick="appendToDisplay('8')">8</button>
+            <button onclick="appendToDisplay('9')">9</button>
+            <button onclick="appendToDisplay('+')">+</button> <!-- Botão de adição -->
+        </div>
+        <div class="row">
+            <button onclick="appendToDisplay('4')">4</button>
+            <button onclick="appendToDisplay('5')">5</button>
+            <button onclick="appendToDisplay('6')">6</button>
+            <button onclick="appendToDisplay('-')">-</button> <!-- Botão de subtração -->
+        </div>
+        <div class="row">
+            <button onclick="appendToDisplay('1')">1</button>
+            <button onclick="appendToDisplay('2')">2</button>
+            <button onclick="appendToDisplay('3')">3</button>
+            <button onclick="appendToDisplay('*')">*</button> <!-- Botão de multiplicação -->
+        </div>
+        <div class="row">
+            <button onclick="appendToDisplay('0')">0</button>
+            <button onclick="clearDisplay()">C</button> <!-- Botão de limpar -->
+            <button onclick="calculateResult()">=</button> <!-- Botão de calcular -->
+            <button onclick="appendToDisplay('/')">/</button> <!-- Botão de divisão -->
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+
+
+
+
+
+
+CSS
+
+
+body {
+  background-color: red; /* Cor de fundo da página */
+  text-align: center;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
+.calculator {
+  background-color: rgb(22, 21, 21); /* Cor de fundo da calculadora */
+  border-radius: 30px;
+  padding: 40px;
+  display: inline-block;
+}
+
+input[type="text"] {
+  width: 100%; /* Tamanho padrão do campo de exibição */
+  margin-bottom: 10px;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.row {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 10px;
+}
+
+button {
+  width: 50px; /* Tamanho padrão dos botões */
+  height: 50px;
+  font-size: 24px;
+}
+
+
+
+
+
+
+
+
+
+
+JAVASCRIPTY
+
+
+let display = document.getElementById('display');
+
+function appendToDisplay(value) {
+    display.value += value; // Adicionar valor ao campo de exibição
+}
+
+function clearDisplay() {
+    display.value = ''; // Limpar o campo de exibição
+}
+
+function calculateResult() {
+    try {
+        display.value = eval(display.value); // Calcular e exibir o resultado
+    } catch (error) {
+        display.value = 'Erro';
+    }
+}
+
+
+
+
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
+
+
+
+
+
+
+
+
+
